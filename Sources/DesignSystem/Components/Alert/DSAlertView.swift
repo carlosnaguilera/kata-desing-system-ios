@@ -15,12 +15,17 @@ public struct DSAlertView: View {
     private let message: String
 
     @Environment(\.dismiss) var dismiss
+    @Environment(\.layoutDirection) var direction
+
+    private var text: String {
+        direction == .leftToRight ? "\(kind.text): \(message)" : "\(message) :\(kind.text)"
+    }
 
     var body: some View {
         HStack {
             HStack(spacing: 16) {
                 kind.icon.renderingMode(.template)
-                Text("\(kind.text): \(message)")
+                Text(text)
                     .font(.custom("Roboto", size: 16))
             }
             .foregroundStyle(kind.mainColor)
@@ -68,6 +73,22 @@ private extension AlertKind {
     }
 }
 
-#Preview {
-    DSAlertView(kind: .success, message: "Success message")
+#Preview("Left to right") {
+    let view: some View = Group {
+        DSAlertView(kind: .error, message: "Error message")
+        DSAlertView(kind: .success, message: "Success message")
+        DSAlertView(kind: .notification, message: "Notification message")
+    }
+    return view.environment(\.layoutDirection, .leftToRight)
+
+
+}
+
+#Preview("Right to left") {
+    Group {
+        DSAlertView(kind: .error, message: "error messagE")
+        DSAlertView(kind: .success, message: "success messagE")
+        DSAlertView(kind: .notification, message: "notification messagE")
+    }
+    .environment(\.layoutDirection, .rightToLeft)
 }
