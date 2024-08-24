@@ -9,7 +9,6 @@ public enum AlertKind: CaseIterable {
 
 extension AlertKind {
 
-    // TODO: Replace with localized strings
     var text: String {
 
         switch self {
