@@ -39,7 +39,7 @@ public struct DSAlertView: View {
         .padding(.horizontal, Spacing.extraLarge)
         .padding(.vertical, Spacing.medium)
         .background(kind.backgroundColor)
-        .cornerRadius(8)
+        .clipShape(RoundedRectangle(cornerRadius: CornerRadius.medium))
     }
 }
 
