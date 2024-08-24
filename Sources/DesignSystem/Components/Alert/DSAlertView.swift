@@ -21,7 +21,7 @@ public struct DSAlertView: View {
         direction == .leftToRight ? "\(kind.text): \(message)" : "\(message) :\(kind.text)"
     }
 
-    var body: some View {
+    public var body: some View {
         HStack {
             HStack(spacing: 16) {
                 kind.icon.renderingMode(.template)
