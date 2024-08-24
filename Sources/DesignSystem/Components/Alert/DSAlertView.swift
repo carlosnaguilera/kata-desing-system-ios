@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct DSAlertView: View {
-    
+
     /// Creates an alert view with the specified kind and message.
     /// - Parameters:
     ///   - kind: kind of alert. Depending on the kind, the icon and the color of the alert will be set.
@@ -80,8 +80,6 @@ private extension AlertKind {
         DSAlertView(kind: .notification, message: "Notification message")
     }
     return view.environment(\.layoutDirection, .leftToRight)
-
-
 }
 
 #Preview("Right to left") {
