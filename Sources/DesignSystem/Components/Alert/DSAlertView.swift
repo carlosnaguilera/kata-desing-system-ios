@@ -28,7 +28,7 @@ public struct DSAlertView: View {
                 Text(text)
                     .font(.custom("Roboto", size: 16))
             }
-            .foregroundStyle(kind.mainColor)
+            .foregroundStyle(kind.textColor)
             Spacer()
             Button {
                 dismiss()
@@ -56,20 +56,27 @@ private extension AlertKind {
         }
     }
 
-    var mainColor: Color {
+    var textColor: Color {
 
         switch self {
         case .error:
-            Color(.error)
+            .errorText
         case .success:
-            Color(.success)
+            .successText
         case .notification:
-            Color(.notification)
+            .notificationText
         }
     }
 
     var backgroundColor: Color {
-        mainColor.opacity(0.1)
+        switch self {
+        case .error:
+            .errorBackground
+        case .success:
+            .successBackground
+        case .notification:
+            .notificationBackground
+        }
     }
 }
 
