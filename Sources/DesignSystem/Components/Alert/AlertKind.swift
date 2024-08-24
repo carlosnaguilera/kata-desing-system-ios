@@ -1,6 +1,6 @@
 import Foundation
 
-enum AlertKind {
+enum AlertKind: CaseIterable {
     case error
     case success
     case notification
