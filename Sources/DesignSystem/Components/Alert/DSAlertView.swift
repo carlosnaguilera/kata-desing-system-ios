@@ -23,7 +23,7 @@ public struct DSAlertView: View {
 
     public var body: some View {
         HStack {
-            HStack(spacing: 16) {
+            HStack(spacing: Spacing.large) {
                 kind.icon.renderingMode(.template)
                 Text(text)
                     .font(.body)
@@ -36,7 +36,8 @@ public struct DSAlertView: View {
                 Image(.cross)
             }
         }
-        .padding(EdgeInsets(top: 12, leading: 24, bottom: 12, trailing: 24))
+        .padding(.horizontal, Spacing.extraLarge)
+        .padding(.vertical, Spacing.medium)
         .background(kind.backgroundColor)
         .cornerRadius(8)
     }
