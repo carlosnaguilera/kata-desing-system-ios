@@ -26,7 +26,7 @@ public struct DSAlertView: View {
             HStack(spacing: 16) {
                 kind.icon.renderingMode(.template)
                 Text(text)
-                    .font(.custom("Roboto", size: 16))
+                    .font(.body)
             }
             .foregroundStyle(kind.textColor)
             Spacer()
