@@ -15,13 +15,15 @@ let package = Package(
         .package(
             url: "https://github.com/pointfreeco/swift-snapshot-testing",
             from: "1.15.1"
-        )
+        ),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", "0.56.1"..<"0.57.0"),
     ],
     targets: [
         .target(
             name: "DesignSystem",
             dependencies: [],
-            resources: []
+            resources: [],
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]
         ),
         .testTarget(
             name: "DesignSystemTests",
