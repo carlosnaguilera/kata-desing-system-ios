@@ -14,11 +14,11 @@ extension AlertKind {
 
         switch self {
         case .error:
-            return "Error"
+            String(localized: "Error", comment: "Error alert kind title")
         case .success:
-            return "Success"
+            String(localized: "Success", comment: "Success alert kind title")
         case .notification:
-            return "Notification"
+            String(localized: "Notification", comment: "Notification alert kind title")
         }
     }
 }

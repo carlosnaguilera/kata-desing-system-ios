@@ -1,0 +1,15 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Error" : {
+      "comment" : "Error alert kind title"
+    },
+    "Notification" : {
+      "comment" : "Notification alert kind title"
+    },
+    "Success" : {
+      "comment" : "Success alert kind title"
+    }
+  },
+  "version" : "1.0"
+}
