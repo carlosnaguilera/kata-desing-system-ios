@@ -60,11 +60,11 @@ private extension AlertKind {
 
         switch self {
         case .error:
-            Color(red: 240.0 / 255.0, green: 61.0 / 255.0, blue: 62.0 / 255.0)
+            Color(.error)
         case .success:
-            Color(red: 0.0 / 255.0, green: 123.0 / 255.0, blue: 64.0 / 255.0)
+            Color(.success)
         case .notification:
-            Color(red: 216.0 / 255.0, green: 73.0 / 255.0, blue: 16.0 / 255.0)
+            Color(.notification)
         }
     }
 
