@@ -17,11 +17,12 @@ let package = Package(
             from: "1.15.1"
         ),
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", "0.56.1"..<"0.57.0"),
+        .package(name: "DesignTokens", path: "../DesignTokens"),
     ],
     targets: [
         .target(
             name: "DesignSystem",
-            dependencies: [],
+            dependencies: [.product(name: "DesignTokens", package: "DesignTokens")],
             resources: [],
             plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]
         ),
