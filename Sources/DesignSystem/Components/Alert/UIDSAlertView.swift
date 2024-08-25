@@ -32,6 +32,8 @@ public final class UIDSAlertView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(resource: .cross), for: .normal)
         button.setContentCompressionResistancePriority(.required, for: .horizontal)
+        button.accessibilityLabel = String(localized: "Close Alert",
+                                           comment: "Accessibility label for the close button in the alert")
         return button
     }()
 
@@ -66,6 +68,8 @@ public final class UIDSAlertView: UIView {
 
         label.text = "\(kind.text): \(message)"
         label.textColor = kind.textColor
+        label.accessibilityLabel = String(localized: "\(kind.text) alert: \(message)",
+                                          comment: "Accessibility label for the alert")
 
         [iconView, label, closeButton].forEach(addSubview)
 

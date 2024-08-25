@@ -1,13 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "alert.accessibility.text" : {
-      "comment" : "Accessibility label for the alert message",
-      "extractionState" : "manual",
+    "%@ alert: %@" : {
+      "comment" : "Accessibility label for the alert",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "%1$@ alert: %2$@"
           }
         }
