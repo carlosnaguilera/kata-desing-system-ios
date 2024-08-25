@@ -17,24 +17,41 @@ public struct DSAlertView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.layoutDirection) var direction
 
+    @ScaledMetric var imageSize = 24.0
+
     private var text: String {
         direction == .leftToRight ? "\(kind.text): \(message)" : "\(message) :\(kind.text)"
     }
 
+    private var mainContent: some View {
+
+        HStack(spacing: Spacing.large) {
+            kind.icon
+                .renderingMode(.template)
+                .accessibility(hidden: true)
+            Text(text)
+                .font(.bodyFont)
+                .accessibilityLabel(String(localized: "alert.accessibility.text",
+                                           comment: "Accessibility label for the alert"))
+        }
+        .foregroundStyle(kind.textColor)
+    }
+
+    private var button: some View {
+        Button {
+            dismiss()
+        } label: {
+            Image(.cross)
+        }
+        .accessibilityLabel(String(localized: "Close Alert",
+                                   comment: "Accessibility label for the close button in the alert"))
+    }
+
     public var body: some View {
         HStack {
-            HStack(spacing: Spacing.large) {
-                kind.icon.renderingMode(.template)
-                Text(text)
-                    .font(.bodyFont)
-            }
-            .foregroundStyle(kind.textColor)
+            mainContent
             Spacer()
-            Button {
-                dismiss()
-            } label: {
-                Image(.cross)
-            }
+            button
         }
         .padding(.horizontal, Spacing.extraLarge)
         .padding(.vertical, Spacing.medium)
@@ -55,6 +72,7 @@ private extension AlertKind {
         case .notification:
             Image(.bell)
         }
+
     }
 
     var textColor: Color {

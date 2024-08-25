@@ -1,6 +1,21 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "alert.accessibility.text" : {
+      "comment" : "Accessibility label for the alert message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ alert: %2$@"
+          }
+        }
+      }
+    },
+    "Close Alert" : {
+      "comment" : "Accessibility label for the close button in the alert"
+    },
     "Error" : {
       "comment" : "Error alert kind title"
     },
