@@ -22,7 +22,7 @@ public struct DSAlertView: View {
     }
 
     private var mainContent: some View {
-        
+
         HStack(spacing: Spacing.large) {
             kind.icon
                 .renderingMode(.template)
@@ -33,15 +33,21 @@ public struct DSAlertView: View {
         .foregroundStyle(kind.textColor)
     }
 
+    private var button: some View {
+        Button {
+            dismiss()
+        } label: {
+            Image(.cross)
+        }
+        .accessibilityLabel(String(localized: "Close Alert",
+                                   comment: "Accessibility label for the close button in the alert"))
+    }
+
     public var body: some View {
         HStack {
             mainContent
             Spacer()
-            Button {
-                dismiss()
-            } label: {
-                Image(.cross)
-            }
+            button
         }
         .padding(.horizontal, Spacing.extraLarge)
         .padding(.vertical, Spacing.medium)

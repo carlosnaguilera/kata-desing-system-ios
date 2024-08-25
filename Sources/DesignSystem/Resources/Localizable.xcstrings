@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Close Alert" : {
+      "comment" : "Accessibility label for the close button in the alert"
+    },
     "Error" : {
       "comment" : "Error alert kind title"
     },
