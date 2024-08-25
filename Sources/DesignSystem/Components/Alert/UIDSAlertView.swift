@@ -17,7 +17,8 @@ public final class UIDSAlertView: UIView {
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .bodyFont
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: UIFont.body)
         label.numberOfLines = 0
         label.textAlignment = .natural
         return label
@@ -32,7 +33,7 @@ public final class UIDSAlertView: UIView {
         button.setImage(UIImage(resource: .cross), for: .normal)
         return button
     }()
-    
+
     /// Creates an alert view with the specified kind and message.
     /// - Parameters:
     ///   - kind: kind of alert. Depending on the kind, the icon and the color of the alert will be set.

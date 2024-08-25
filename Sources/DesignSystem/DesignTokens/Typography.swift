@@ -7,5 +7,5 @@ extension Font {
 }
 
 extension UIFont {
-    static let bodyFont = UIFont(name: "Roboto", size: 16) ?? .systemFont(ofSize: 16)
+    static let body = UIFont(name: "Roboto", size: 16) ?? .systemFont(ofSize: 16)
 }
