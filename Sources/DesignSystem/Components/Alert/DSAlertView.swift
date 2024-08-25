@@ -23,12 +23,12 @@ public struct DSAlertView: View {
 
     public var body: some View {
         HStack {
-            HStack(spacing: 16) {
+            HStack(spacing: Spacing.large) {
                 kind.icon.renderingMode(.template)
                 Text(text)
-                    .font(.custom("Roboto", size: 16))
+                    .font(.bodyFont)
             }
-            .foregroundStyle(kind.mainColor)
+            .foregroundStyle(kind.textColor)
             Spacer()
             Button {
                 dismiss()
@@ -36,9 +36,10 @@ public struct DSAlertView: View {
                 Image(.cross)
             }
         }
-        .padding(EdgeInsets(top: 12, leading: 24, bottom: 12, trailing: 24))
+        .padding(.horizontal, Spacing.extraLarge)
+        .padding(.vertical, Spacing.medium)
         .background(kind.backgroundColor)
-        .cornerRadius(8)
+        .clipShape(RoundedRectangle(cornerRadius: CornerRadius.medium))
     }
 }
 
@@ -56,20 +57,27 @@ private extension AlertKind {
         }
     }
 
-    var mainColor: Color {
+    var textColor: Color {
 
         switch self {
         case .error:
-            Color(.error)
+            .errorText
         case .success:
-            Color(.success)
+            .successText
         case .notification:
-            Color(.notification)
+            .notificationText
         }
     }
 
     var backgroundColor: Color {
-        mainColor.opacity(0.1)
+        switch self {
+        case .error:
+            .errorBackground
+        case .success:
+            .successBackground
+        case .notification:
+            .notificationBackground
+        }
     }
 }
 
