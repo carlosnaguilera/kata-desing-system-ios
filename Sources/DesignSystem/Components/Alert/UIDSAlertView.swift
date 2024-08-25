@@ -1,8 +1,8 @@
 import UIKit
 
-final class UIDSAlertView: UIView {
+public final class UIDSAlertView: UIView {
 
-    var buttonTapHandler: (() -> Void)?
+    public var buttonTapHandler: (() -> Void)?
 
     private let kind: AlertKind
     private let message: String
@@ -37,7 +37,7 @@ final class UIDSAlertView: UIView {
     /// - Parameters:
     ///   - kind: kind of alert. Depending on the kind, the icon and the color of the alert will be set.
     ///   - message: message to be displayed in the alert.
-    init(kind: AlertKind, message: String) {
+    public init(kind: AlertKind, message: String) {
         self.kind = kind
         self.message = message
         super.init(frame: .zero)

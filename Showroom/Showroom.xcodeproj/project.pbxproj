@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0744DF9D2C7B7DE100362D63 /* UIShowroomAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744DF9C2C7B7DE100362D63 /* UIShowroomAppView.swift */; };
+		0744DF9F2C7B815B00362D63 /* UIShowroomAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744DF9E2C7B815B00362D63 /* UIShowroomAppViewController.swift */; };
 		25010C072A17726E00D6AD98 /* ShowroomApp+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */; };
 		25010C0B2A17726F00D6AD98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25010C0A2A17726F00D6AD98 /* Assets.xcassets */; };
 		253580BB2AD5E3E9001AB906 /* ShowroomApp+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E504602AD43B7000A1DAC5 /* ShowroomApp+SwiftUI.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0744DF9C2C7B7DE100362D63 /* UIShowroomAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShowroomAppView.swift; sourceTree = "<group>"; };
+		0744DF9E2C7B815B00362D63 /* UIShowroomAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShowroomAppViewController.swift; sourceTree = "<group>"; };
 		25010C032A17726E00D6AD98 /* Showroom-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Showroom-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowroomApp+UIKit.swift"; sourceTree = "<group>"; };
 		25010C0A2A17726F00D6AD98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			children = (
 				25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */,
 				25E504602AD43B7000A1DAC5 /* ShowroomApp+SwiftUI.swift */,
+				0744DF9C2C7B7DE100362D63 /* UIShowroomAppView.swift */,
+				0744DF9E2C7B815B00362D63 /* UIShowroomAppViewController.swift */,
 				25010C0A2A17726F00D6AD98 /* Assets.xcassets */,
 				25010C0C2A17726F00D6AD98 /* Preview Content */,
 			);
@@ -195,6 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0744DF9D2C7B7DE100362D63 /* UIShowroomAppView.swift in Sources */,
+				0744DF9F2C7B815B00362D63 /* UIShowroomAppViewController.swift in Sources */,
 				25010C072A17726E00D6AD98 /* ShowroomApp+UIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
