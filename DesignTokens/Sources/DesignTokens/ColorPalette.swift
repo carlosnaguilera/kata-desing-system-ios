@@ -1,6 +1,6 @@
 import SwiftUI
 
-extension Color {
+public extension Color {
 
     // We create these colors in case we can reuse them in other components apart from AlertView
     // to display errors, success or notifications
@@ -13,7 +13,7 @@ extension Color {
     static let notificationText = Color(.notification)
 }
 
-extension UIColor {
+public extension UIColor {
 
     // We create these colors in case we can reuse them in other components apart from AlertView
     // to display errors, success or notifications

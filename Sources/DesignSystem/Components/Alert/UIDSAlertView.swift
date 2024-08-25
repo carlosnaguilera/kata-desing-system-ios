@@ -1,3 +1,4 @@
+import DesignTokens
 import UIKit
 
 public final class UIDSAlertView: UIView {
@@ -30,7 +31,7 @@ public final class UIDSAlertView: UIView {
         }
         let button = UIButton(type: .custom, primaryAction: action)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(resource: .cross), for: .normal)
+        button.setImage(.cross, for: .normal)
         button.setContentCompressionResistancePriority(.required, for: .horizontal)
         button.accessibilityLabel = String(localized: "Close Alert",
                                            comment: "Accessibility label for the close button in the alert")
@@ -109,11 +110,11 @@ private extension AlertKind {
 
         switch self {
         case .error:
-            return UIImage(resource: .error)
+            return .error
         case .success:
-            return UIImage(resource: .success)
+            return .success
         case .notification:
-            return UIImage(resource: .bell)
+            return .notification
         }
     }
 

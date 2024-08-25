@@ -1,3 +1,4 @@
+import DesignTokens
 import SwiftUI
 
 public struct DSAlertView: View {
@@ -41,7 +42,7 @@ public struct DSAlertView: View {
         Button {
             dismiss()
         } label: {
-            Image(.cross)
+            Image.cross
         }
         .accessibilityLabel(String(localized: "Close Alert",
                                    comment: "Accessibility label for the close button in the alert"))
@@ -66,11 +67,11 @@ private extension AlertKind {
 
         switch self {
         case .error:
-            Image(.error)
+            Image.error
         case .success:
-            Image(.success)
+            Image.success
         case .notification:
-            Image(.bell)
+            Image.notification
         }
 
     }
