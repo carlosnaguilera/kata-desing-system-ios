@@ -31,6 +31,7 @@ public final class UIDSAlertView: UIView {
         let button = UIButton(type: .custom, primaryAction: action)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(resource: .cross), for: .normal)
+        button.setContentCompressionResistancePriority(.required, for: .horizontal)
         return button
     }()
 
@@ -55,7 +56,10 @@ public final class UIDSAlertView: UIView {
         layer.cornerRadius = CornerRadius.medium
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        directionalLayoutMargins = NSDirectionalEdgeInsets(top: Spacing.medium, leading: Spacing.extraLarge, bottom: Spacing.medium, trailing: Spacing.extraLarge)
+        directionalLayoutMargins = NSDirectionalEdgeInsets(top: Spacing.medium,
+                                                           leading: Spacing.extraLarge,
+                                                           bottom: Spacing.medium,
+                                                           trailing: Spacing.extraLarge)
 
         iconView.image = kind.icon.withRenderingMode(.alwaysTemplate)
         iconView.tintColor = kind.textColor
@@ -67,15 +71,17 @@ public final class UIDSAlertView: UIView {
 
         NSLayoutConstraint.activate([
             iconView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            iconView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            iconView.topAnchor.constraint(greaterThanOrEqualTo: layoutMarginsGuide.topAnchor),
+            iconView.bottomAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.bottomAnchor),
             iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: Spacing.large),
-            label.centerYAnchor.constraint(equalTo: iconView.centerYAnchor),
+            label.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            label.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
 
             closeButton.leadingAnchor.constraint(greaterThanOrEqualTo: label.trailingAnchor, constant: Spacing.large),
             closeButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            closeButton.centerYAnchor.constraint(equalTo: iconView.centerYAnchor),
+            closeButton.centerYAnchor.constraint(equalTo: iconView.centerYAnchor)
         ])
 
     }
