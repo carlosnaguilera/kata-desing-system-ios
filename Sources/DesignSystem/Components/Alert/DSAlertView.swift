@@ -29,6 +29,8 @@ public struct DSAlertView: View {
                 .accessibility(hidden: true)
             Text(text)
                 .font(.bodyFont)
+                .accessibilityLabel(String(localized: "alert.accessibility.text",
+                                           comment: "Accessibility label for the alert"))
         }
         .foregroundStyle(kind.textColor)
     }
