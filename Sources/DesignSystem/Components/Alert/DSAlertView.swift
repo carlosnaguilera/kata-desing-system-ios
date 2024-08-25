@@ -17,6 +17,8 @@ public struct DSAlertView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.layoutDirection) var direction
 
+    @ScaledMetric var imageSize = 24.0
+
     private var text: String {
         direction == .leftToRight ? "\(kind.text): \(message)" : "\(message) :\(kind.text)"
     }
