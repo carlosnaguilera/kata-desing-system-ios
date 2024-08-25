@@ -21,16 +21,21 @@ public struct DSAlertView: View {
         direction == .leftToRight ? "\(kind.text): \(message)" : "\(message) :\(kind.text)"
     }
 
+    private var mainContent: some View {
+        
+        HStack(spacing: Spacing.large) {
+            kind.icon
+                .renderingMode(.template)
+                .accessibility(hidden: true)
+            Text(text)
+                .font(.bodyFont)
+        }
+        .foregroundStyle(kind.textColor)
+    }
+
     public var body: some View {
         HStack {
-            HStack(spacing: Spacing.large) {
-                kind.icon
-                    .renderingMode(.template)
-                    .accessibility(hidden: true)
-                Text(text)
-                    .font(.bodyFont)
-            }
-            .foregroundStyle(kind.textColor)
+            mainContent
             Spacer()
             Button {
                 dismiss()
