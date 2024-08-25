@@ -24,7 +24,9 @@ public struct DSAlertView: View {
     public var body: some View {
         HStack {
             HStack(spacing: Spacing.large) {
-                kind.icon.renderingMode(.template)
+                kind.icon
+                    .renderingMode(.template)
+                    .accessibility(hidden: true)
                 Text(text)
                     .font(.bodyFont)
             }
@@ -55,6 +57,7 @@ private extension AlertKind {
         case .notification:
             Image(.bell)
         }
+
     }
 
     var textColor: Color {
