@@ -14,7 +14,7 @@ struct ShowroomApp: App {
                 .padding(.bottom, 8)
             VStack {
                 ForEach(AlertKind.allCases, id: \.self) { alertKind in
-                    DSAlertView(kind: alertKind, message: "Alert message")
+                    DSAlertView(kind: alertKind, message: "Message")
                         .padding(.bottom, 8)
                 }
             }.padding()

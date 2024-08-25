@@ -5,3 +5,7 @@ extension Font {
     // although the app worked fine 🤷🏻‍♂️
     static let bodyFont = Font.custom("Roboto", size: 16)
 }
+
+extension UIFont {
+    static let body = UIFont(name: "Roboto", size: 16) ?? .systemFont(ofSize: 16)
+}
